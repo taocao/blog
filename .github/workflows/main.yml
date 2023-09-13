@@ -32,10 +32,6 @@ jobs:
       - name: Generate Index
         run: python ${{ github.workspace }}/generate_index.py
 
-      - name: Copy site assets
-        run: |
-          cp -r ${{ github.workspace }}/site_template/* ${{ github.workspace }}/html_output/
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

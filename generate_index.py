@@ -13,7 +13,6 @@ new_data = data.replace(
 
 print("Generated index content:", new_data)  # Debug line to show the generated index content
 
-
 # Copy CSS file
 os.system('cp site_template/style.css html_output/style.css')
 
