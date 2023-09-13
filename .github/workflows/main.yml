@@ -30,15 +30,15 @@ jobs:
           done
 
       - name: Generate Index
-        run: python generate_index.py
+        run: python ${{ github.workspace }}/generate_index.py
 
       - name: Copy site assets
         run: |
-          cp -r site_template/* html_output/
+          cp -r ${{ github.workspace }}/site_template/* ${{ github.workspace }}/html_output/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html_output # The directory where the HTML files are generated
-          publish_branch: gh-pages # The branch you are using for GitHub Pages
+          publish_dir: ${{ github.workspace }}/html_output
+          publish_branch: gh-pages
