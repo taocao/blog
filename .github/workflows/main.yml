@@ -28,6 +28,10 @@ jobs:
             jupyter nbconvert --to html $notebook --output-dir html_output
           done
 
+      - name: Generate Index
+         run: |
+           python generate_index.py
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
