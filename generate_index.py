@@ -13,8 +13,9 @@ new_data = data.replace(
 
 print("Generated index content:", new_data)  # Debug line to show the generated index content
 
-with open('html_output/index.html', 'w') as file:
-    file.write(new_data)
 
 # Copy CSS file
 os.system('cp site_template/style.css html_output/style.css')
+
+with open('html_output/index.html', 'w') as file:
+    file.write(new_data)
